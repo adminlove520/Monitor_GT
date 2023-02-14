@@ -1,6 +1,6 @@
 # https://docs.github.com/cn/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Update dailynews
+name: Update dailynews-dev
 
 # 国际标准时间2点（北京时间10点）
 on:
@@ -22,6 +22,7 @@ jobs:
           chmod u+x *.py
           pip3 install -r requirements.txt
           python3 -m pip install --upgrade pip
+          python3 installDb.py
 
       - name: Run Task from Main
         # env:
